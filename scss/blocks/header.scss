@@ -1,0 +1,140 @@
+@import '../variables.scss';
+
+.header {
+  display: grid;
+  grid-template:
+    'logo ... nav' auto
+    / auto 1fr auto;
+  align-items: center;
+  padding: 15px 0;
+
+  &__logo {
+    display: flex;
+    grid-area: logo;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    column-gap: 8px;
+  }
+
+  &__logo-img {
+    width: 60px;
+    height: 50px;
+    margin-right: 7px;
+  }
+
+  &__logo-title {
+    color: $color-body;
+  }
+
+  &__burger {
+    justify-self: end;
+    width: 26px;
+    height: 20px;
+    background-image: url('../../assets/icons/burger.svg');
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.nav {
+  left: 0;
+  display: flex;
+  grid-area: nav;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 18px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  &--mobile {
+    display: none;
+
+    @media (max-width: 768px) {
+      position: absolute;
+      top: 0;
+      z-index: 10;
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 30px;
+      width: 50%;
+      height: 100%;
+      padding: 50px;
+      background-color: rgba(#05333E, 0.99);
+    }
+  }
+
+  &--active {
+    display: flex;
+  }
+
+  &__close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 32px;
+    height: 32px;
+    background-image: url('../../assets/icons/close.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px;
+    cursor: pointer;
+  }
+
+  &__item {
+    color: $color-body;
+    font-weight: 400;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 23px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #CCCCCC;
+    }
+  }
+
+  &--mobile &__item {
+    font-size: 18px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 45px;
+    padding: 0 16px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &--border {
+      border: 2px solid #0071A9;
+
+      &:hover {
+        background-color: #0071A9;
+      }
+    }
+
+    &--fill {
+      background: linear-gradient(84.95deg, rgba(#0071A9, 0.63) 12.38%, #007862 83.97%);
+
+      &:hover {
+        background-color: #007862;
+      }
+    }
+  }
+}

@@ -1,0 +1,142 @@
+@import '../variables.scss';
+
+.mission {
+  margin-bottom: 125px;
+
+  &__cards {
+    display: flex;
+    flex-direction: row;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+  }
+}
+
+.m-card {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 282.84px;
+    height: 241.39px;
+    background: radial-gradient(48.34% 48.34% at 50% 50%, rgb(0 178 146 / 46%) 0%, rgb(0 177 144 / 0%) 100%);
+    transform: rotate(20.49deg);
+  }
+
+  &--learn::before {
+    background: radial-gradient(48.34% 48.34% at 50% 50%, rgb(208 21 214 / 46%) 0%, rgb(0 177 144 / 0%) 100%);
+  }
+
+  &--earn::before {
+    background: radial-gradient(43.24% 42.81% at 50.15% 50.13%, rgb(0 113 169 / 82%) 0%, rgb(0 113 169 / 0%) 100%);
+  }
+
+  &__preview {
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(126.7deg, #00D6AE 47.03%, rgb(14 255 211 / 0%) 76.73%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &--learn &__preview {
+    background: linear-gradient(126.7deg, #D015D6 47.03%, rgb(208 21 214 / 0%) 76.73%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &--earn &__preview {
+    background: linear-gradient(126.7deg, #0071A9 47.03%, rgb(0 113 169 / 0%) 76.73%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__letter {
+    font-weight: 400;
+    font-size: 192px;
+    font-family: 'Righteous', cursive;
+    font-style: normal;
+    line-height: 238px;
+    letter-spacing: -0.23em;
+    text-align: center;
+  }
+
+  &--learn &__letter {
+    letter-spacing: -0.02em;
+  }
+
+  &--earn &__letter {
+    letter-spacing: -0.04em;
+  }
+
+  &__other {
+    font-weight: 400;
+    font-size: 32px;
+    font-family: 'Righteous', cursive;
+    line-height: 39.73px;
+  }
+
+  &--learn &__other {
+    letter-spacing: 0;
+  }
+
+  &--earn &__other {
+    letter-spacing: 0;
+  }
+
+  &__number {
+    position: absolute;
+    top: 103px;
+    margin-right: 19px;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 96px;
+    font-family: 'Righteous', cursive;
+    font-style: normal;
+    line-height: 119px;
+    text-align: center;
+    text-shadow: 4px 5px 8px rgb(0 0 0 / 30%);
+  }
+
+  &__content {
+    margin-top: -20px;
+    padding-left: 20px;
+  }
+
+  &__title {
+    width: fit-content;
+    max-width: 210px;
+    font-weight: 400;
+    font-size: 24px;
+    font-family: 'Righteous', cursive;
+    font-style: normal;
+    line-height: 28px;
+
+    @media (max-width: 768px) {
+      max-width: 250px;
+      font-size: 28px;
+      line-height: 32px;
+    }
+  }
+
+  &__text {
+    width: 174px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+
+    @media (max-width: 768px) {
+      width: 210px;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+}

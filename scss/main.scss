@@ -1,0 +1,224 @@
+@import 'vendor/normalize.scss';
+@import 'variables.scss';
+@import './blocks/header.scss';
+@import './blocks/promo.scss';
+@import './blocks/about.scss';
+@import './blocks/mission.scss';
+@import './blocks/characters.scss';
+@import './blocks/how.scss';
+@import './blocks/token.scss';
+@import './blocks/roadmap.scss';
+@import './blocks/partners.scss';
+@import './blocks/info.scss';
+@import './utils/button.scss';
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  color: $color-body;
+  font-family: 'Noto Sans', sans-serif;
+  background: #000000;
+}
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(149.9deg, #04293F 2.4%, #00D5AE 332.52%) no-repeat;
+  background-size: contain;
+}
+
+.container {
+  box-sizing: border-box;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  @media (min-width: 768px) {
+    width: 758px;
+    padding: 0;
+  }
+
+  @media (min-width: 992px) {
+    width: 982px;
+    padding: 0;
+  }
+
+  @media (min-width: 1200px) {
+    width: 984px;
+    padding: 0;
+  }
+
+  &--lg {
+    @media (min-width: 1400px) {
+      width: 1300px;
+      padding: 0;
+    }
+  }
+}
+
+.greeting {
+  position: relative;
+  width: 100%;
+  min-height: 900px;
+  margin-bottom: 100px;
+  background-image: url('../../assets/images/promo-background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &--info {
+    margin-bottom: 0;
+    padding-bottom: 105px;
+    background-image: url('../../assets/images/info-background.png');
+  }
+
+  @media (max-width: 576px) {
+    margin-bottom: 0;
+  }
+
+  &__whale {
+    position: absolute;
+
+    &--big {
+      $width: 1046px;
+      $width-sm: 500px;
+      top: 180px;
+      left: calc(50% - $width / 2);
+      z-index: 1;
+
+      @media (max-width: 576px) {
+        top: 330px;
+        left: calc(50% - $width-sm / 2 - 100px);
+
+        img {
+          width: $width-sm;
+        }
+      }
+    }
+
+    &--small {
+      $width: 332px;
+      $width-sm: 200px;
+      top: 570px;
+      left: calc(50% - $width / 2);
+      z-index: -1;
+      margin-left: 400px;
+
+      @media (max-width: 576px) {
+        top: 500px;
+        left: calc(50% - $width-sm / 2 + 150px);
+        margin-left: 0;
+
+        img {
+          width: $width-sm;
+        }
+      }
+    }
+  }
+
+  > .container {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 30px;
+
+  &__link {
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.section-title {
+  margin: 0;
+  margin-bottom: 5px;
+  font-weight: 400;
+  font-size: 64px;
+  font-family: 'Righteous', cursive;
+  line-height: 65px;
+  text-align: center;
+  text-shadow: 1px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.section-line {
+  width: 100%;
+  height: 3px;
+  margin-bottom: 18px;
+  background:
+    linear-gradient(
+      90deg,
+      rgb(0 213 174 / 0%) 3.25%,
+      #00D5AE 19.27%,
+      #D015D6 49.84%,
+      #0071A9 73.58%,
+      rgb(0 113 169 / 0%) 99.36%
+    );
+}
+
+.footer {
+  background-color: #05333E;
+
+  &__sep {
+    width: 100%;
+    height: 3px;
+    margin-bottom: 60px;
+    background:
+      linear-gradient(
+        90deg,
+        rgb(0 213 174 / 50%) 19.27%,
+        rgb(208 21 214 / 50%) 49.84%,
+        rgb(0 113 169 / 50%) 73.58%
+      );
+  }
+
+  .social {
+    margin-bottom: 63px;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 70px;
+    column-gap: 16px;
+  }
+
+  &__link {
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:last-child {
+      flex: 1;
+      text-align: right;
+    }
+
+    @media (max-width: 576px) {
+      flex: 1;
+
+      &:last-child {
+        text-align: left;
+      }
+    }
+
+    &:not(:last-child):hover {
+      color: #CCCCCC;
+    }
+  }
+}

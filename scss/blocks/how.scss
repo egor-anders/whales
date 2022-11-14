@@ -1,0 +1,105 @@
+@import '../variables.scss';
+
+.how {
+  margin-bottom: 125px;
+
+  @media (max-width: 576px) {
+    margin-bottom: 100px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+      flex-direction: column;
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: repeat(1, 1fr);
+      flex-direction: column;
+    }
+  }
+
+  .section-line {
+    margin-bottom: 12px;
+  }
+}
+
+.h-card {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+
+  &::before {
+    position: absolute;
+    top: -110px;
+    left: -116px;
+    z-index: -1;
+    width: 432px;
+    height: 432px;
+    background: radial-gradient(25.12% 25.12% at 55.44% 53.05%, rgb(0 255 208 / 24%) 0%, rgb(0 171 255 / 0%) 100%);
+    content: '';
+
+    @media (max-width: 992px) {
+      left: -60px;
+    }
+
+    @media (max-width: 576px) {
+      left: -65px;
+    }
+  }
+
+  &--1::before {
+    background: radial-gradient(25.12% 25.12% at 55.44% 53.05%, rgb(0 255 208 / 24%) 0%, rgb(0 171 255 / 0%) 100%);
+  }
+
+  &--2::before {
+    background: radial-gradient(25.12% 25.12% at 55.44% 53.05%, rgb(166 59 206 / 30%) 0%, rgb(15 121 203 / 0%) 100%);
+  }
+
+  &--3::before {
+    background: radial-gradient(25.12% 25.12% at 55.44% 53.05%, rgb(72 51 213 / 33%) 0%, rgb(0 201 255 / 0%) 100%);
+  }
+
+  &--4::before {
+    background: radial-gradient(25.12% 25.12% at 55.44% 53.05%, rgb(219 20 255 / 30%) 0%, rgb(0 201 255 / 0%) 100%);
+  }
+
+  &__image {
+    display: flex;
+    flex-direction: column;
+    height: 238px;
+
+    @media (max-width: 992px) {
+      height: 228px;
+    }
+
+    @media (max-width: 576px) {
+      left: -65px;
+    }
+  }
+
+  &__content {
+    min-width: 180px;
+  }
+
+  &__title {
+    margin-bottom: 11px;
+    font-weight: 400;
+    font-size: 24px;
+    font-family: 'Righteous', cursive;
+    font-style: normal;
+    line-height: 28px;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+  }
+}

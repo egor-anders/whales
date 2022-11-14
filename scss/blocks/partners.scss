@@ -1,0 +1,45 @@
+@import '../variables.scss';
+
+.partners {
+  margin-bottom: 125px;
+
+  @media (max-width: 576px) {
+    margin-bottom: 100px;
+  }
+
+  .section-line {
+    margin-bottom: 55px;
+
+    @media (max-width: 576px) {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 41px;
+    padding: 0 20px;
+    column-gap: 44px;
+
+    @media (max-width: 576px) {
+      row-gap: 15px;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: calc(50% - 251px);
+      left: calc(50% - 251px);
+      width: 502px;
+      height: 502px;
+      background: radial-gradient(50% 50% at 50% 50%, rgb(0 255 231 / 13%) 0%, rgb(0 255 231 / 0%) 59.69%);
+      content: '';
+    }
+  }
+}
